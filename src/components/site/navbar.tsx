@@ -15,9 +15,15 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Link } from "@tanstack/react-router";
 import { useCart } from "@/lib/cart";
 
-const NAV_LINKS = ["Chains", "Pendants", "Best Sellers", "Drops"];
+const NAV_LINKS = [
+  { label: "Chains", to: "/chains" as const },
+  { label: "Pendants", to: "/pendants" as const },
+  { label: "Best Sellers", to: "/" as const, hash: "best-sellers" },
+  { label: "Drops", to: "/" as const, hash: "best-sellers" },
+];
 
 export function Navbar() {
   const { count, openCart } = useCart();
