@@ -1,11 +1,12 @@
 import { ShoppingBag } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PRODUCTS, gbp, type Product } from "@/lib/products";
 import { useCart } from "@/lib/cart";
 
-function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
 
   return (
@@ -36,33 +37,48 @@ function ProductCard({ product }: { product: Product }) {
         <h3 className="text-sm font-semibold text-foreground sm:text-base">
           {product.name}
         </h3>
-        <p className="mt-1 text-sm font-bold text-gold">{gbp(product.price)}</p>
+        <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">
+          {product.description}
+        </p>
+        <p className="mt-2 text-sm font-bold text-gold">{gbp(product.price)}</p>
       </CardContent>
     </Card>
   );
 }
 
-export function ProductGrid() {
+export function ProductGrid({
+  products = PRODUCTS,
+  eyebrow = "Featured",
+  title = "The Collection",
+  showViewAll = true,
+}: {
+  products?: Product[];
+  eyebrow?: string;
+  title?: string;
+  showViewAll?: boolean;
+}) {
   return (
     <section id="best-sellers" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
       <div className="mb-10 flex items-end justify-between">
         <div>
           <p className="mb-2 text-xs font-bold uppercase tracking-[0.4em] text-gold">
-            Featured
+            {eyebrow}
           </p>
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
-            The Collection
+            {title}
           </h2>
         </div>
-        <a
-          href="#chains"
-          className="gold-underline hidden text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground sm:block"
-        >
-          View All
-        </a>
+        {showViewAll && (
+          <Link
+            to="/chains"
+            className="gold-underline hidden text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground sm:block"
+          >
+            View All
+          </Link>
+        )}
       </div>
       <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-        {PRODUCTS.map((product) => (
+        {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
