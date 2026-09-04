@@ -3,7 +3,7 @@ import sterlingLink from "@/assets/sterling-link-chain.jpg.asset.json";
 import silverFranco from "@/assets/silver-franco-chain.jpg.asset.json";
 import silverFoxtail from "@/assets/silver-foxtail-chain.jpg.asset.json";
 import silverCurb from "@/assets/silver-curb-chain.jpg.asset.json";
-import goldBox from "@/assets/gold-box-chain.jpg.asset.json";
+import aurelius from "@/assets/aurelius-chain.jpg.asset.json";
 import goldCable from "@/assets/gold-cable-chain.jpg.asset.json";
 import noirEdge from "@/assets/noir-edge-pendant.jpg.asset.json";
 import stagNoir from "@/assets/stag-noir-pendant.jpg.asset.json";
@@ -94,10 +94,10 @@ export const PRODUCTS: Product[] = [
     tag: "Best Seller",
   },
   {
-    id: "gold-box-chain",
-    name: "18K Gold Box Chain",
+    id: "the-aurelius-chain",
+    name: "The Aurelius Chain",
     price: 65.0,
-    image: goldBox.url,
+    image: aurelius.url,
     category: "chains",
     description:
       "Rounded box links in a rich 18K gold finish. Warm, architectural, unmistakable.",
