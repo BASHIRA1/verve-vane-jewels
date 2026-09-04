@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChainsRouteImport } from './routes/chains'
+import { Route as PendantsRouteImport } from './routes/pendants'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ChainsRoute = ChainsRouteImport.update({
+  id: '/chains',
+  path: '/chains',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PendantsRoute = PendantsRouteImport.update({
+  id: '/pendants',
+  path: '/pendants',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/chains': typeof ChainsRoute
+  '/pendants': typeof PendantsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/chains': typeof ChainsRoute
+  '/pendants': typeof PendantsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/chains': typeof ChainsRoute
+  '/pendants': typeof PendantsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/chains' | '/pendants'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/chains' | '/pendants'
+  id: '__root__' | '/' | '/chains' | '/pendants'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChainsRoute: typeof ChainsRoute
+  PendantsRoute: typeof PendantsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/chains': {
+      id: '/chains'
+      path: '/chains'
+      fullPath: '/chains'
+      preLoaderRoute: typeof ChainsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pendants': {
+      id: '/pendants'
+      path: '/pendants'
+      fullPath: '/pendants'
+      preLoaderRoute: typeof PendantsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChainsRoute: ChainsRoute,
+  PendantsRoute: PendantsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

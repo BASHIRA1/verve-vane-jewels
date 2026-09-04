@@ -1,13 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Toaster } from "@/components/ui/sonner";
-import { CartProvider } from "@/lib/cart";
-import { Navbar } from "@/components/site/navbar";
 import { Hero } from "@/components/site/hero";
 import { TrustBanner } from "@/components/site/trust-banner";
 import { ProductGrid } from "@/components/site/product-grid";
 import { Spotlight } from "@/components/site/spotlight";
-import { CartSheet } from "@/components/site/cart-sheet";
-import { Footer } from "@/components/site/footer";
+import { PRODUCTS } from "@/lib/products";
 
 export const Route = createFileRoute("/")({
   head: () => ({

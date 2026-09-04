@@ -11,6 +11,11 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Toaster } from "@/components/ui/sonner";
+import { CartProvider } from "@/lib/cart";
+import { Navbar } from "@/components/site/navbar";
+import { CartSheet } from "@/components/site/cart-sheet";
+import { Footer } from "@/components/site/footer";
 
 function NotFoundComponent() {
   return (
@@ -137,8 +142,18 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <CartProvider>
+        <div className="min-h-screen bg-background text-foreground">
+          <Navbar />
+          <main>
+            {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+            <Outlet />
+          </main>
+          <Footer />
+          <CartSheet />
+          <Toaster theme="dark" position="bottom-center" />
+        </div>
+      </CartProvider>
     </QueryClientProvider>
   );
 }
