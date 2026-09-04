@@ -32,19 +32,15 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <CartProvider>
-      <div className="min-h-screen bg-background text-foreground">
-        <Navbar />
-        <main>
-          <Hero />
-          <TrustBanner />
-          <ProductGrid />
-          <Spotlight />
-        </main>
-        <Footer />
-        <CartSheet />
-        <Toaster theme="dark" position="bottom-center" />
-      </div>
-    </CartProvider>
+    <>
+      <Hero />
+      <TrustBanner />
+      <ProductGrid
+        products={PRODUCTS.filter((p) => p.tag).slice(0, 4)}
+        eyebrow="Featured"
+        title="The Collection"
+      />
+      <Spotlight />
+    </>
   );
 }
