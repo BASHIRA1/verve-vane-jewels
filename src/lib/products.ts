@@ -1,5 +1,5 @@
 import silverRope from "@/assets/silver-rope-chain.jpg.asset.json";
-import silverSpiga from "@/assets/silver-spiga-chain.jpg.asset.json";
+import sterlingLink from "@/assets/sterling-link-chain.jpg.asset.json";
 import silverFranco from "@/assets/silver-franco-chain.jpg.asset.json";
 import silverFoxtail from "@/assets/silver-foxtail-chain.jpg.asset.json";
 import silverCurb from "@/assets/silver-curb-chain.jpg.asset.json";
@@ -56,13 +56,13 @@ export const PRODUCTS: Product[] = [
     tag: "Best Seller",
   },
   {
-    id: "silver-spiga-chain",
-    name: "Silver Spiga Chain",
+    id: "the-sterling-link",
+    name: "The Sterling Link",
     price: 52.0,
-    image: silverSpiga.url,
+    image: sterlingLink.url,
     category: "chains",
     description:
-      "Woven spiga braid with a dense, fluid drape. Substantial without the weight.",
+      "Woven sterling braid with a dense, fluid drape. Substantial without the weight.",
   },
   {
     id: "silver-franco-chain",
