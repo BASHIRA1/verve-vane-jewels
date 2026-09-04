@@ -6,7 +6,7 @@ import silverCurb from "@/assets/silver-curb-chain.jpg.asset.json";
 import goldBox from "@/assets/gold-box-chain.jpg.asset.json";
 import goldCable from "@/assets/gold-cable-chain.jpg.asset.json";
 import onyxTablet from "@/assets/onyx-tablet-pendant.jpg.asset.json";
-import blackDogTag from "@/assets/black-dog-tag-pendant.jpg.asset.json";
+import stagNoir from "@/assets/stag-noir-pendant.jpg.asset.json";
 
 export type CategorySlug = "chains" | "pendants";
 
@@ -123,13 +123,13 @@ export const PRODUCTS: Product[] = [
     tag: "Best Seller",
   },
   {
-    id: "black-dog-tag-pendant",
-    name: "Blackout Dog Tag Pendant",
+    id: "stag-noir-pendant",
+    name: "The Stag Noir Pendant",
     price: 50.0,
-    image: blackDogTag.url,
+    image: stagNoir.url,
     category: "pendants",
     description:
-      "Matte black tag engraved with the Vane crest, hung on a blackened box chain.",
+      "Matte black dog tag crowned with the gold Stag Noir crest, hung on a blackened box chain.",
     tag: "New Drop",
   },
 ];
