@@ -1,12 +1,12 @@
-import silverRope from "@/assets/silver-rope-chain.jpg.asset.json";
-import silverSpiga from "@/assets/silver-spiga-chain.jpg.asset.json";
+import royalTwist from "@/assets/royal-twist-chain.jpg.asset.json";
+import sterlingLink from "@/assets/sterling-link-chain.jpg.asset.json";
 import silverFranco from "@/assets/silver-franco-chain.jpg.asset.json";
 import silverFoxtail from "@/assets/silver-foxtail-chain.jpg.asset.json";
 import silverCurb from "@/assets/silver-curb-chain.jpg.asset.json";
-import goldBox from "@/assets/gold-box-chain.jpg.asset.json";
+import aurelius from "@/assets/aurelius-chain.jpg.asset.json";
 import goldCable from "@/assets/gold-cable-chain.jpg.asset.json";
-import onyxTablet from "@/assets/onyx-tablet-pendant.jpg.asset.json";
-import blackDogTag from "@/assets/black-dog-tag-pendant.jpg.asset.json";
+import noirEdge from "@/assets/noir-edge-pendant.jpg.asset.json";
+import stagNoir from "@/assets/stag-noir-pendant.jpg.asset.json";
 
 export type CategorySlug = "chains" | "pendants";
 
@@ -46,23 +46,23 @@ export const CATEGORIES: Category[] = [
 
 export const PRODUCTS: Product[] = [
   {
-    id: "silver-rope-chain",
-    name: "Silver Rope Chain",
+    id: "the-royal-twist",
+    name: "The Royal Twist",
     price: 48.0,
-    image: silverRope.url,
+    image: royalTwist.url,
     category: "chains",
     description:
       "A tightly twisted rope link in polished sterling silver. Catches light from every angle.",
     tag: "Best Seller",
   },
   {
-    id: "silver-spiga-chain",
-    name: "Silver Spiga Chain",
+    id: "the-sterling-link",
+    name: "The Sterling Link",
     price: 52.0,
-    image: silverSpiga.url,
+    image: sterlingLink.url,
     category: "chains",
     description:
-      "Woven spiga braid with a dense, fluid drape. Substantial without the weight.",
+      "Woven sterling braid with a dense, fluid drape. Substantial without the weight.",
   },
   {
     id: "silver-franco-chain",
@@ -94,10 +94,10 @@ export const PRODUCTS: Product[] = [
     tag: "Best Seller",
   },
   {
-    id: "gold-box-chain",
-    name: "18K Gold Box Chain",
+    id: "the-aurelius-chain",
+    name: "The Aurelius Chain",
     price: 65.0,
-    image: goldBox.url,
+    image: aurelius.url,
     category: "chains",
     description:
       "Rounded box links in a rich 18K gold finish. Warm, architectural, unmistakable.",
@@ -113,23 +113,23 @@ export const PRODUCTS: Product[] = [
       "A fine cable link for layering. Understated gold that plays well with pendants.",
   },
   {
-    id: "onyx-tablet-pendant",
-    name: "Onyx Tablet Pendant",
+    id: "noir-edge-pendant",
+    name: "The Noir Edge Pendant",
     price: 55.0,
-    image: onyxTablet.url,
+    image: noirEdge.url,
     category: "pendants",
     description:
-      "Black onyx set in a silver bezel on a slim snake chain. Clean lines, zero noise.",
+      "Jet-black tablet set in a polished silver frame on a slim snake chain. Clean lines, zero noise.",
     tag: "Best Seller",
   },
   {
-    id: "black-dog-tag-pendant",
-    name: "Blackout Dog Tag Pendant",
+    id: "stag-noir-pendant",
+    name: "The Stag Noir Pendant",
     price: 50.0,
-    image: blackDogTag.url,
+    image: stagNoir.url,
     category: "pendants",
     description:
-      "Matte black tag engraved with the Vane crest, hung on a blackened box chain.",
+      "Matte black dog tag crowned with the gold Stag Noir crest, hung on a blackened box chain.",
     tag: "New Drop",
   },
 ];
