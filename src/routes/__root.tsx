@@ -77,11 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Verve & Vane — Luxury UK Chains & Pendants" },
+      {
+        name: "description",
+        content:
+          "Premium UK chains and statement pendants built for the confident aesthetic.",
+      },
+      { name: "author", content: "Verve & Vane" },
+      { property: "og:title", content: "Verve & Vane — Luxury UK Chains & Pendants" },
+      {
+        property: "og:description",
+        content:
+          "Premium UK chains and statement pendants built for the confident aesthetic.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
