@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-chain.jpg";
 
@@ -35,10 +36,10 @@ export function Hero() {
               className="bg-gold px-8 text-sm font-bold uppercase tracking-widest text-primary-foreground hover:bg-gold-soft"
               asChild
             >
-              <a href="#best-sellers">
-                Shop Collection
+              <Link to="/chains">
+                Shop Chains
                 <ArrowRight className="ml-2 size-4" />
-              </a>
+              </Link>
             </Button>
             <Button
               size="lg"
@@ -46,7 +47,7 @@ export function Hero() {
               className="border-gold/50 bg-transparent px-8 text-sm font-bold uppercase tracking-widest text-gold hover:bg-gold/10 hover:text-gold"
               asChild
             >
-              <a href="#drops">View Drops</a>
+              <Link to="/pendants">View Pendants</Link>
             </Button>
           </div>
         </div>

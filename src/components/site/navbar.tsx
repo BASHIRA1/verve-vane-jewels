@@ -15,9 +15,15 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Link } from "@tanstack/react-router";
 import { useCart } from "@/lib/cart";
 
-const NAV_LINKS = ["Chains", "Pendants", "Best Sellers", "Drops"];
+const NAV_LINKS = [
+  { label: "Chains", to: "/chains" as const },
+  { label: "Pendants", to: "/pendants" as const },
+  { label: "Best Sellers", to: "/" as const, hash: "best-sellers" },
+  { label: "Drops", to: "/" as const, hash: "best-sellers" },
+];
 
 export function Navbar() {
   const { count, openCart } = useCart();
@@ -46,36 +52,38 @@ export function Navbar() {
             </SheetHeader>
             <div className="flex flex-col gap-1 px-4 pt-4">
               {NAV_LINKS.map((link) => (
-                <a
-                  key={link}
-                  href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  {...(link.hash ? { hash: link.hash } : {})}
                   onClick={() => setMenuOpen(false)}
                   className="rounded-md px-3 py-3 text-base font-medium text-foreground transition-colors hover:bg-accent hover:text-gold"
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               ))}
             </div>
           </SheetContent>
         </Sheet>
 
         {/* Brand */}
-        <a href="/" className="text-brand text-sm sm:text-base text-foreground">
+        <Link to="/" className="text-brand text-sm sm:text-base text-foreground">
           VERVE <span className="text-gold">&amp;</span> VANE
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="gap-1">
             {NAV_LINKS.map((link) => (
-              <NavigationMenuItem key={link}>
+              <NavigationMenuItem key={link.label}>
                 <NavigationMenuLink asChild>
-                  <a
-                    href={`#${link.toLowerCase().replace(/\s+/g, "-")}`}
+                  <Link
+                    to={link.to}
+                    {...(link.hash ? { hash: link.hash } : {})}
                     className="gold-underline px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {link}
-                  </a>
+                    {link.label}
+                  </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}

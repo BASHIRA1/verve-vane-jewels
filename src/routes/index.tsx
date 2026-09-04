@@ -1,13 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Toaster } from "@/components/ui/sonner";
-import { CartProvider } from "@/lib/cart";
-import { Navbar } from "@/components/site/navbar";
 import { Hero } from "@/components/site/hero";
 import { TrustBanner } from "@/components/site/trust-banner";
 import { ProductGrid } from "@/components/site/product-grid";
 import { Spotlight } from "@/components/site/spotlight";
-import { CartSheet } from "@/components/site/cart-sheet";
-import { Footer } from "@/components/site/footer";
+import { PRODUCTS } from "@/lib/products";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,19 +32,15 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <CartProvider>
-      <div className="min-h-screen bg-background text-foreground">
-        <Navbar />
-        <main>
-          <Hero />
-          <TrustBanner />
-          <ProductGrid />
-          <Spotlight />
-        </main>
-        <Footer />
-        <CartSheet />
-        <Toaster theme="dark" position="bottom-center" />
-      </div>
-    </CartProvider>
+    <>
+      <Hero />
+      <TrustBanner />
+      <ProductGrid
+        products={PRODUCTS.filter((p) => p.tag).slice(0, 4)}
+        eyebrow="Featured"
+        title="The Collection"
+      />
+      <Spotlight />
+    </>
   );
 }

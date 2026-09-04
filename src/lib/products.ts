@@ -1,44 +1,141 @@
-import obsidian from "@/assets/product-obsidian.jpg";
-import goldBox from "@/assets/product-gold-box.jpg";
-import wheat from "@/assets/product-wheat.jpg";
-import dogTag from "@/assets/product-dogtag.jpg";
+import silverRope from "@/assets/silver-rope-chain.jpg.asset.json";
+import silverSpiga from "@/assets/silver-spiga-chain.jpg.asset.json";
+import silverFranco from "@/assets/silver-franco-chain.jpg.asset.json";
+import silverFoxtail from "@/assets/silver-foxtail-chain.jpg.asset.json";
+import silverCurb from "@/assets/silver-curb-chain.jpg.asset.json";
+import goldBox from "@/assets/gold-box-chain.jpg.asset.json";
+import goldCable from "@/assets/gold-cable-chain.jpg.asset.json";
+import onyxTablet from "@/assets/onyx-tablet-pendant.jpg.asset.json";
+import blackDogTag from "@/assets/black-dog-tag-pendant.jpg.asset.json";
+
+export type CategorySlug = "chains" | "pendants";
 
 export interface Product {
   id: string;
   name: string;
   price: number;
   image: string;
+  category: CategorySlug;
+  description: string;
   tag?: string;
 }
 
+export interface Category {
+  slug: CategorySlug;
+  title: string;
+  eyebrow: string;
+  description: string;
+}
+
+export const CATEGORIES: Category[] = [
+  {
+    slug: "chains",
+    title: "Chains",
+    eyebrow: "The Foundation",
+    description:
+      "Solid rope, spiga, franco, curb and box links in sterling silver and 18K gold finish. Tarnish-resistant, built for daily wear.",
+  },
+  {
+    slug: "pendants",
+    title: "Pendants",
+    eyebrow: "The Statement",
+    description:
+      "Sharp, minimal hardware. Onyx tablets and blacked-out tags on matched chains — the finishing move for any stack.",
+  },
+];
+
 export const PRODUCTS: Product[] = [
   {
-    id: "obsidian-pendant",
-    name: "The Obsidian Pendant",
-    price: 45.0,
-    image: obsidian,
+    id: "silver-rope-chain",
+    name: "Silver Rope Chain",
+    price: 48.0,
+    image: silverRope.url,
+    category: "chains",
+    description:
+      "A tightly twisted rope link in polished sterling silver. Catches light from every angle.",
+    tag: "Best Seller",
+  },
+  {
+    id: "silver-spiga-chain",
+    name: "Silver Spiga Chain",
+    price: 52.0,
+    image: silverSpiga.url,
+    category: "chains",
+    description:
+      "Woven spiga braid with a dense, fluid drape. Substantial without the weight.",
+  },
+  {
+    id: "silver-franco-chain",
+    name: "Silver Franco Chain",
+    price: 58.0,
+    image: silverFranco.url,
+    category: "chains",
+    description:
+      "Four-sided franco weave, machined tight for a seamless mirror finish.",
+    tag: "New Drop",
+  },
+  {
+    id: "silver-foxtail-chain",
+    name: "Silver Foxtail Chain",
+    price: 54.0,
+    image: silverFoxtail.url,
+    category: "chains",
+    description:
+      "Flat foxtail links with a soft sheen. Sits flush against the collarbone.",
+  },
+  {
+    id: "silver-curb-chain",
+    name: "Heavy Silver Curb Chain",
+    price: 62.0,
+    image: silverCurb.url,
+    category: "chains",
+    description:
+      "Wide, flattened curb links — the loudest piece in the vault. Lobster clasp secured.",
     tag: "Best Seller",
   },
   {
     id: "gold-box-chain",
-    name: "Classic 18k Gold Box Chain",
-    price: 55.0,
-    image: goldBox,
+    name: "18K Gold Box Chain",
+    price: 65.0,
+    image: goldBox.url,
+    category: "chains",
+    description:
+      "Rounded box links in a rich 18K gold finish. Warm, architectural, unmistakable.",
     tag: "New Drop",
   },
   {
-    id: "silver-wheat-chain",
-    name: "Heavy Silver Wheat Chain",
-    price: 50.0,
-    image: wheat,
+    id: "gold-cable-chain",
+    name: "18K Gold Cable Chain",
+    price: 45.0,
+    image: goldCable.url,
+    category: "chains",
+    description:
+      "A fine cable link for layering. Understated gold that plays well with pendants.",
   },
   {
-    id: "dog-tag-chain",
-    name: "Embossed Dog Tag Chain",
-    price: 40.0,
-    image: dogTag,
+    id: "onyx-tablet-pendant",
+    name: "Onyx Tablet Pendant",
+    price: 55.0,
+    image: onyxTablet.url,
+    category: "pendants",
+    description:
+      "Black onyx set in a silver bezel on a slim snake chain. Clean lines, zero noise.",
+    tag: "Best Seller",
+  },
+  {
+    id: "black-dog-tag-pendant",
+    name: "Blackout Dog Tag Pendant",
+    price: 50.0,
+    image: blackDogTag.url,
+    category: "pendants",
+    description:
+      "Matte black tag engraved with the Vane crest, hung on a blackened box chain.",
+    tag: "New Drop",
   },
 ];
+
+export const productsByCategory = (slug: CategorySlug) =>
+  PRODUCTS.filter((p) => p.category === slug);
 
 export const FREE_SHIPPING_THRESHOLD = 50;
 
