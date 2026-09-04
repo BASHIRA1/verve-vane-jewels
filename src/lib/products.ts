@@ -5,7 +5,7 @@ import silverFoxtail from "@/assets/silver-foxtail-chain.jpg.asset.json";
 import silverCurb from "@/assets/silver-curb-chain.jpg.asset.json";
 import goldBox from "@/assets/gold-box-chain.jpg.asset.json";
 import goldCable from "@/assets/gold-cable-chain.jpg.asset.json";
-import onyxTablet from "@/assets/onyx-tablet-pendant.jpg.asset.json";
+import noirEdge from "@/assets/noir-edge-pendant.jpg.asset.json";
 import stagNoir from "@/assets/stag-noir-pendant.jpg.asset.json";
 
 export type CategorySlug = "chains" | "pendants";
@@ -113,13 +113,13 @@ export const PRODUCTS: Product[] = [
       "A fine cable link for layering. Understated gold that plays well with pendants.",
   },
   {
-    id: "onyx-tablet-pendant",
-    name: "Onyx Tablet Pendant",
+    id: "noir-edge-pendant",
+    name: "The Noir Edge Pendant",
     price: 55.0,
-    image: onyxTablet.url,
+    image: noirEdge.url,
     category: "pendants",
     description:
-      "Black onyx set in a silver bezel on a slim snake chain. Clean lines, zero noise.",
+      "Jet-black tablet set in a polished silver frame on a slim snake chain. Clean lines, zero noise.",
     tag: "Best Seller",
   },
   {
