@@ -1,4 +1,4 @@
-import silverRope from "@/assets/silver-rope-chain.jpg.asset.json";
+import royalTwist from "@/assets/royal-twist-chain.jpg.asset.json";
 import sterlingLink from "@/assets/sterling-link-chain.jpg.asset.json";
 import silverFranco from "@/assets/silver-franco-chain.jpg.asset.json";
 import silverFoxtail from "@/assets/silver-foxtail-chain.jpg.asset.json";
@@ -46,10 +46,10 @@ export const CATEGORIES: Category[] = [
 
 export const PRODUCTS: Product[] = [
   {
-    id: "silver-rope-chain",
-    name: "Silver Rope Chain",
+    id: "the-royal-twist",
+    name: "The Royal Twist",
     price: 48.0,
-    image: silverRope.url,
+    image: royalTwist.url,
     category: "chains",
     description:
       "A tightly twisted rope link in polished sterling silver. Catches light from every angle.",
